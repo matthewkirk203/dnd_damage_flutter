@@ -7,8 +7,7 @@
         {
             "name": "dnd",
             "request": "launch",
-            "type": "dart",
-            "args": ["-d", "chrome"]
+            "type": "dart"
         },
         {
             "name": "dnd (profile mode)",

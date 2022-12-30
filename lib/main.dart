@@ -72,7 +72,7 @@ class _MyHomePageState extends State<MyHomePage> {
       }
       _averageHitDamage = _calculateAvgDamage(_numDice, _numSides)+_damageBonus;
       _hitChance = _calculateHitChance(_targetAC, _attackBonus);
-      _totalAverageDamage = _calculateAvgDamageWithRerolls(_numDice, _numSides, _rerollNumbers)+_damageBonus * _hitChance;
+      _totalAverageDamage = (_calculateAvgDamageWithRerolls(_numDice, _numSides, _rerollNumbers)+_damageBonus) * _hitChance;
     });
   }
 
@@ -94,7 +94,7 @@ class _MyHomePageState extends State<MyHomePage> {
         sides.add(i.toDouble());
       }
     }
-    return sides.average;
+    return sides.average * numDice;
   }
 
   static double _calculateHitChance(int ac, int attackBonus) {
